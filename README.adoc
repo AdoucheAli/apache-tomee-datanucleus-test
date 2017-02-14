@@ -1,0 +1,59 @@
+= Apache TomEE DataNucleus Test
+// Settings:
+:icons: font
+:toc: preamble
+:toclevels: 1
+ifdef::env-github[:!toc-title:]
+// URIs:
+:uri-arquillian: http://arquillian.org
+:uri-tomee: http://tomee.apache.org
+:uri-tomee-maven: http://tomee.apache.org/tomee-maven-plugin.html
+
+The purpose of this project is to test whether DataNucleus can be used as the JPA provider in {uri-tomee}[Apache TomEE 7].
+
+== Overview
+
+This project consists of a Java EE 7 web application with a Maven build.
+The project is tested using {uri-arquillian}[Arquillian].
+
+== Setup
+
+=== Importing the project into an IDE
+
+We recommend that you import the Maven project into your IDE (i.e., IntelliJ IDEA Ultimate or Eclipse IDE for Java EE Developers).
+You'll unlock the most functionality by importing the Maven project since it provides access to profiles that can be used to run the test on different container profiles.
+
+== Usage
+
+=== Running the tests using Maven
+
+To run the tests on TomEE in embedded mode from a terminal using Maven, simply run:
+
+ $ mvn test
+
+You can run a single test method using:
+
+ $ mvn test -Dtest=EntityrakerTest#shouldBeRakedIn
+
+To run the tests on TomEE in managed mode, you first need to build a configured TomEE instance that contains the jar files for the JPA provider.
+You can use the {uri-tomee-maven}[TomEE Maven plugin] to build that instance, already configured in this project.
+Simply run the following command from a terminal:
+
+ $ mvn tomee:build -Dtomee-plugin.skipCurrentProject=true
+
+A new server instance has been prepared for you at the path [.path]_servers/apache-tomee-webprofile-7.0.2_.
+You can now run the tests on TomEE in managed mode from a terminal using Maven with:
+
+ $ mvn test -Parquillian=tomee-managed
+
+You can run a single test method using:
+
+ $ mvn test -Parquillian=tomee-managed -Dtest=EntityrakerTest#shouldBeRakedIn
+
+=== Running the tests in the IDE
+
+Once the project is imported, you can navigate to a test case, EntityrakerTest, and run it just like you would any other JUnit test.
+That will run the test on TomEE in embedded mode by default.
+
+To run the tests on TomEE in managed mode from the IDE, you first need to activate the `arquillian=tomee-managed` Maven profile.
+Then you need to set the `arquillian.launch` system property to `tomee-managed` in the run configuration for the test.

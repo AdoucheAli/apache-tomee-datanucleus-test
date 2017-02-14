@@ -1,0 +1,8 @@
+<resources>
+    <Resource id="SecretAgentDS" type="DataSource">
+        JdbcDriver org.hsqldb.jdbcDriver
+        JdbcUrl jdbc:hsqldb:mem:SecretAgentDB
+        UserName sa
+        Password
+    </Resource>
+</resources>
