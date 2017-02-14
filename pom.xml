@@ -28,12 +28,12 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>5.0.6</version>
+            <version>5.0.7</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>5.0.6</version>
+            <version>5.0.8</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -101,9 +101,9 @@
                     <tomeeVersion>${tomee.version}</tomeeVersion>
                     <libs>
                         <lib>org.eclipse.persistence:eclipselink:2.6.3</lib>
-                        <lib>org.datanucleus:datanucleus-core:5.0.6</lib>
-                        <lib>org.datanucleus:datanucleus-api-jpa:5.0.6</lib>
-                        <lib>org.datanucleus:datanucleus-rdbms:5.0.6</lib>
+                        <lib>org.datanucleus:datanucleus-core:5.0.7</lib>
+                        <lib>org.datanucleus:datanucleus-api-jpa:5.0.8</lib>
+                        <lib>org.datanucleus:datanucleus-rdbms:5.0.7</lib>
                     </libs>
                 </configuration>
                 <executions>
@@ -138,7 +138,7 @@
                 <dependency>
                     <groupId>org.datanucleus</groupId>
                     <artifactId>datanucleus-rdbms</artifactId>
-                    <version>5.0.6</version>
+                    <version>5.0.7</version>
                     <scope>test</scope>
                 </dependency>
                 <dependency>

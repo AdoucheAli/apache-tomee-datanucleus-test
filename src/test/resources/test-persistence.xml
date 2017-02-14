@@ -13,13 +13,6 @@
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
 
-            <!--
-            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:SecretAgentDB"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            -->
-
             <property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.logging.parameters" value="true"/>
             <property name="eclipselink.logging.connection" value="false"/>
